@@ -1,7 +1,13 @@
-<h1>Create a dose</h1>
+<nav class="navbaro">
+<%= link_to "Reviens à la maison", cocktails_path, class: "linko" %>
+<%= link_to @cocktail.name, cocktail_path(@cocktail), class: "linko" %>
+</nav>
+<div class="col-md-4 test">
+<h2>Dose moi ça</h2>
 
 <%= simple_form_for [ @cocktail, @dose ] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient %>
-  <%= f.submit "Submit dose", class: "btn btn-primary" %>
+  <%= f.submit "Mets la dose", class: "btn btn-primary" %>
 <% end %>
+</div>

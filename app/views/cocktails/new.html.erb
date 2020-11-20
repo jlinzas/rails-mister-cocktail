@@ -1,9 +1,13 @@
+<nav class="navbaro">
+<%= link_to "Reviens à la maison", cocktails_path, class: "linko" %>
+<%= link_to "Les cocktails", cocktails_path, class: "linko" %>
+</nav>
 <div class="container">
-  <div class="col-md-6 center">
-    <h1>Create a cocktail</h1>
+  <div class="col-md-4 test">
+    <h2>Ton cocktail</h2>
 
     <%= simple_form_for [ @cocktail ] do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name, label: false %>
     <%= f.submit "Cocktail !", class: "btn btn-primary" %>
     <% end %>
   </div>
