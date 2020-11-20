@@ -1,0 +1,46 @@
+// Specific CSS for your home-page
+.containar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+body {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.center {
+  margin: auto;
+  padding: 10px;
+}
+
+h1 {
+  color: rgb(25, 65, 110);
+}
+
+.h1_1 {
+  padding: 20px;
+  color: rgb(37, 240, 223);
+}
+
+.test {
+  color: rgb(25, 65, 110);
+  font-size: 30px;
+}
+
+.linko {
+  color: rgb(25, 65, 110);
+}
+
+.linko:hover {
+  text-decoration: none;
+  color: rgb(129, 200, 248);
+}
+
+.table_1 {
+  justify-content: space-between;
+  max-width: 400px;
+  min-width: 300px;
+  color: rgb(25, 65, 110);
+}
