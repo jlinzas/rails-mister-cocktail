@@ -8,6 +8,7 @@
 
     <%= simple_form_for [ @cocktail ] do |f| %>
     <%= f.input :name, label: false %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "Cocktail !", class: "btn btn-primary" %>
     <% end %>
   </div>

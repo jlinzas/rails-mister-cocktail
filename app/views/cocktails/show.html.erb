@@ -3,9 +3,13 @@
 <%= link_to "Ajouter un dosage", new_cocktail_dose_path(@cocktail.id), class: "linko"  %>
 </nav>
 <div class="container">
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
   <h1 class="h1_1 center"><%= @cocktail.name %> : Recette</h1>
   <div class="row">
+  <td><%= link_to 'Edit', edit_cocktail_path(@cocktail) %></td>
     <div class="col-sm-12 col-md-6 center">
       <table class="table_1">
         <tbody>
