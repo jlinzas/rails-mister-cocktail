@@ -41,6 +41,17 @@ h2 {
   color: rgb(129, 200, 248);
 }
 
+.next {
+  color: rgb(155, 193, 243);
+  font-size: 60px;
+  padding: 60px 20px;
+}
+
+.next:hover {
+  text-decoration: none;
+  color: rgb(39, 168, 253);
+}
+
 .table_1 {
   justify-content: space-between;
   max-width: 400px;

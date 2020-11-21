@@ -1,10 +1,24 @@
 <nav class="navbaro">
-<%= link_to "Reviens à la maison", cocktails_path, class: "linko" %>
+<%= link_to "Reviens à la maison", root_path, class: "linko" %>
 <%= link_to "Ajouter un dosage", new_cocktail_dose_path(@cocktail.id), class: "linko"  %>
 </nav>
 <div class="container">
+<%= link_to cocktail_path(@cocktails[@cocktails.find_index(@cocktail) - 1]), class: "next" do %>
+  <i class="fas fa-caret-left"></i>
+<% end %>
 <% if @cocktail.photo.attached? %>
   <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+  <%=  cl_image_tag("zz832x5m7dv2l4upygila2d9ncef", height: 300, width: 400, crop: :fill) %>
+<% end %>
+<% if @cocktails[@cocktails.find_index(@cocktail) + 1].nil? %>
+  <%= link_to cocktail_path(@cocktails[0]), class: "next" do %>
+    <i class="fas fa-caret-right"></i>
+  <% end %>
+<% else %>
+  <%= link_to cocktail_path(@cocktails[@cocktails.find_index(@cocktail) + 1]), class: "next" do %>
+    <i class="fas fa-caret-right"></i>
+  <% end %>
 <% end %>
 
   <h1 class="h1_1 center"><%= @cocktail.name %> : Recette  <%= link_to edit_cocktail_path(@cocktail) do %>
@@ -23,7 +37,7 @@
               <td><%= dose.ingredient.name %></td>
               <td><%= dose.description %></td>
               <td>
-                <%= link_to edit_cocktail_path(@cocktail) do %>
+                <%= link_to edit_cocktail_dose_path(@cocktail, dose.id) do %>
                   <i class="fas fa-edit"></i>
                 <% end %>
               </td>
