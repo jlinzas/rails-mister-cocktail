@@ -5,7 +5,6 @@
 body {
   max-width: 1200px;
   margin: auto;
-  text-align: -webkit-center;
   background-color: #2f4468;
   overflow-y: scroll;
 }
@@ -22,9 +21,24 @@ h2 {
   margin-bottom: 20px;
 }
 
-.h1_1 {
+h4 {
+  font-family: "Segoe UI Black";
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.h1_1 {
   color: rgb(37, 240, 223);
+  font-size: 24px;
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-family: "Segoe UI Black";
 }
 
 .col-xl,
@@ -103,28 +117,38 @@ h2 {
 .test {
   color: rgb(189, 212, 241);
   padding: 20px;
+  margin: auto;
 }
 
 .linko {
   color: rgb(155, 193, 243);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .linko:hover {
   text-decoration: none;
-  color: rgb(129, 200, 248);
+  color: rgb(39, 168, 253);
 }
 
 .next {
   color: rgb(155, 193, 243);
   font-size: 60px;
-  padding: 100px 200px;
-  margin-left: -250px;
-  margin-right: -265px;
+  z-index: 5;
+  position: absolute;
 }
 
 .next:hover {
   text-decoration: none;
   color: rgb(39, 168, 253);
+}
+
+.next-1 {
+  left: 0;
+  padding: 105px 200px 105px 30px;
+}
+.next-2 {
+  right: 0;
+  padding: 105px 30px 105px 200px;
 }
 
 .table_1 {
@@ -136,4 +160,55 @@ h2 {
 
 .container {
   min-height: 70vh;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container-show {
+  margin: auto;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.container-new {
+  margin: auto;
+  max-width: 500px;
+  position: relative;
+}
+
+.c-s {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.top-show {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  text-align: end;
+  padding: 15px;
+  width: 250px;
+  font-family: "Segoe UI Black";
+}
+
+.edit {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 6;
+  font-size: 20px;
 }

@@ -12,6 +12,7 @@
 }
 
 .navbaro {
+  margin: auto;
   height: 70px;
   max-width: 800px;
   background: #344d77;
@@ -20,8 +21,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   position: sticky;
   top: 0;
   z-index: 11;
+}
+
+.navbaro-s {
+  margin-bottom: 1px;
 }

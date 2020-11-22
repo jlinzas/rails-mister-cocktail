@@ -2,12 +2,14 @@
 <%= link_to "Reviens à la maison", root_path, class: "linko" %>
 <%= link_to @cocktail.name, cocktail_path(@cocktail), class: "linko" %>
 </nav>
-<div class="col-md-4 test">
-<h2>Dose moi ça</h2>
+<div class="container-new">
+  <div class="col-md-9 test">
+    <h2>Dose moi ça</h2>
 
-<%= simple_form_for [ @cocktail, @dose ] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit "Mets la dose", class: "btn btn-primary" %>
-<% end %>
+    <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingredient %>
+      <%= f.submit "Mets la dose", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>

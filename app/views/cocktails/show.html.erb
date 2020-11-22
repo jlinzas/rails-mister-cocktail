@@ -3,53 +3,46 @@
 <%= link_to "Ajouter un dosage", new_cocktail_dose_path(@cocktail.id), class: "linko"  %>
 </nav>
 <div class="container">
-<%= link_to cocktail_path(@cocktails[@cocktails.find_index(@cocktail) - 1]), class: "next" do %>
-  <i class="fas fa-caret-left"></i>
-<% end %>
-<% if @cocktail.photo.attached? %>
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 500, crop: :fill, class: "card-show" %>
-<% else %>
-  <%=  cl_image_tag("zz832x5m7dv2l4upygila2d9ncef", height: 300, width: 500, crop: :fill, class: "card-show") %>
-<% end %>
-<% if @cocktails[@cocktails.find_index(@cocktail) + 1].nil? %>
-  <%= link_to cocktail_path(@cocktails[0]), class: "next" do %>
-    <i class="fas fa-caret-right"></i>
-  <% end %>
-<% else %>
-  <%= link_to cocktail_path(@cocktails[@cocktails.find_index(@cocktail) + 1]), class: "next" do %>
-    <i class="fas fa-caret-right"></i>
-  <% end %>
-<% end %>
-
-  <h1 class="h1_1 center"><%= @cocktail.name %> : Recette  <%= link_to edit_cocktail_path(@cocktail) do %>
-                  <i class="fas fa-clone"></i>
-                <% end %></h1> 
-  <div class="row">
-    <div class="col-sm-12 col-md-6 center">
-      <table class="table_1">
-        <tbody>
-          <thead>
-            <th>Ingredient</th>
-            <th>Description</th>
-          </thead>
-          <% @cocktail.doses.each do |dose| %>
-            <tr>
-              <td><%= dose.ingredient.name %></td>
-              <td><%= dose.description %></td>
-              <td>
-                <%= link_to edit_cocktail_dose_path(@cocktail, dose.id) do %>
-                  <i class="fas fa-edit"></i>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="fa fa-trash destroy_dose"></i>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+  <div class="container-show">
+    <div class="jsp">
+      <%= link_to cocktail_path(@cocktails[@cocktails.find_index(@cocktail) - 1]), class: "next next-1" do %>
+        <i class="fas fa-caret-left"></i>
+      <% end %>
     </div>
+    <div class="jsp">
+      <% if @cocktails[@cocktails.find_index(@cocktail) + 1].nil? %>
+        <%= link_to cocktail_path(@cocktails[0]), class: "next next-2" do %>
+          <i class="fas fa-caret-right"></i>
+        <% end %>
+      <% else %>
+        <%= link_to cocktail_path(@cocktails[@cocktails.find_index(@cocktail) + 1]), class: "next next-2" do %>
+          <i class="fas fa-caret-right"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <%= link_to edit_cocktail_path(@cocktail), class: "edit linko" do %>
+      <i class="fas fa-clone"></i>
+    <% end %>
+    <div class="card-spec" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), <% if @cocktail.photo.attached? %> url('<%= cl_image_path @cocktail.photo.key, height: 500, width: 800, crop: :fill %>') <% else %> url('https://images.unsplash.com/photo-1521133573892-e44906baee46?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9') <% end %> ">
+
+    </div>
+    <h1 class="h1_1 center"><%= @cocktail.name.capitalize %> : Recette </h1>
+  </div>
+  <div class="container-show c-s">
+    <h4>Ingrédients :</h4>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li>
+        <%= dose.ingredient.name.capitalize %>
+        <%= dose.description %>
+        <%= link_to edit_cocktail_dose_path(@cocktail, dose.id) do %>
+          <i class="fas fa-edit linko"></i>
+        <% end %>
+        <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash destroy_dose linko"></i>
+        <% end %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
