@@ -45,6 +45,25 @@
   position: relative;
 }
 
+.card-ingredient {
+  background-size: cover;
+  background-position: center;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0.5px 0 0 rgba(0, 0, 0, 0.3);
+}
+
 img {
   vertical-align: -125px;
+}
+
+.row-2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1px;
 }

@@ -28,21 +28,27 @@
     </div>
     <h1 class="h1_1 center"><%= @cocktail.name.capitalize %> : Recette </h1>
   </div>
-  <div class="container-show c-s">
-    <h4>Ingrédients :</h4>
-    <ul>
+  <div class="container-show">
+    <div class="row-2">
       <% @cocktail.doses.each do |dose| %>
-        <li>
-        <%= dose.ingredient.name.capitalize %>
-        <%= dose.description %>
-        <%= link_to edit_cocktail_dose_path(@cocktail, dose.id) do %>
-          <i class="fas fa-edit linko"></i>
-        <% end %>
-        <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fa fa-trash destroy_dose linko"></i>
-        <% end %>
-        </li>
+        <div class="col-6">
+            <div class="card-ingredient" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0))">
+              <ul>
+                  <li>
+                  <%= dose.ingredient.name.capitalize %>
+                  <%= dose.description %>
+                  <%= link_to edit_cocktail_dose_path(@cocktail, dose.id) do %>
+                    <i class="fas fa-edit dose_edit linko"></i>
+                  <% end %>
+                  <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fa fa-trash dose_destroy linko"></i>
+                  <% end %>
+                  </li>
+              </ul>
+            </div>
+        </div>
       <% end %>
-    </ul>
+	  </div>
+
   </div>
 </div>

@@ -173,8 +173,8 @@ h4 {
 
 .container-new {
   margin: auto;
-  max-width: 500px;
   position: relative;
+  max-width: 500px;
 }
 
 .c-s {
@@ -196,13 +196,13 @@ ul {
   margin-inline-start: 0;
   margin-inline-end: 0;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  text-align: end;
-  padding: 15px;
+  text-align: center;
   width: 250px;
   font-family: "Segoe UI Black";
+  padding: 10px;
 }
 
 .edit {
@@ -211,4 +211,16 @@ ul {
   right: 10px;
   z-index: 6;
   font-size: 20px;
+}
+
+.dose_destroy {
+  position: absolute;
+  bottom: 35px;
+  right: 10px;
+}
+
+.dose_edit {
+  position: absolute;
+  bottom: 35px;
+  right: 25px;
 }
